@@ -20,7 +20,7 @@ def singup(request):
     return render(request, 'registration/signup.html', context)
 
 def login(request):
-    form = AuthenticationForm(request, request.POST or None)
+    form = AuthenticationForm(request, data=request.POST or None)
 
     if form.is_valid():
         # 내가 작성한 코드

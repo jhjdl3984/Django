@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # own_apps
     'todo',
     'users',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
