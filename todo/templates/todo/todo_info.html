@@ -61,9 +61,12 @@
 <div class="container">
     <div style="display: flex; justify-content: space-between">
         <h1>{{ todo.title }}</h1>
-        <div>
-            <button class="button-group" onclick="location.href='{% url 'todo_update' todo.id %}'">수정하기</button>
-            <button class="button-group" id="delete-button" onclick="location.href='{% url 'todo_delete' todo.id %}'">삭제하기</button>
+        <div style="display: flex;">
+            <button class="button-group" onclick="location.href='{% url 'cbv:update' todo.id %}'">수정하기</button>
+            <form method="POST" action="{% url 'cbv:delete' todo.id %}">
+                {% csrf_token %}
+                <button class="button-group" id="delete-button" type="submit">삭제하기</button>
+            </form>
         </div>
     </div>
     <table>
