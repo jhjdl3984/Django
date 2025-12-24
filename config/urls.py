@@ -27,6 +27,9 @@ urlpatterns = [
     path('todo/<int:todo_id>/update/', todo_update, name='todo_update'),
     path('todo/<int:todo_id>/delete/', todo_delete, name='todo_delete'),
 
+    # cbv url include
+    path('cbv/', include('todo.urls')),
+
     # 회원
     path('accounts/signup/', singup, name='signup'),
     path('accounts/login/', login, name='login'),
